@@ -34,3 +34,39 @@ and you can configure it from there.
 
 Alternatively, you can get the proxy JAR from the [downloads](https://papermc.io/downloads#Velocity)
 page.
+
+[//]: # (/*)
+
+[//]: # (* PAPER'S VERSION FOR FIXING IT. MAY NEED TO REVERT LATER.)
+
+[//]: # (*/)
+
+[//]: # (//                  if &#40;playerKey.getKeyRevision&#40;&#41;.compareTo&#40;IdentifiedKey.Revision.LINKED_V2&#41; >= 0&#41; {)
+
+[//]: # (//                    // Bad, very bad.)
+
+[//]: # (//                    logger.fatal&#40;"A plugin tried to change a signed chat message. ")
+
+[//]: # (//                        + "This is no longer possible in 1.19.1 and newer. ")
+
+[//]: # (//                        + "Disconnecting player " + player.getUsername&#40;&#41;&#41;;)
+
+[//]: # (//                    player.disconnect&#40;Component.text&#40;"A proxy plugin caused an illegal protocol state. ")
+
+[//]: # (//                        + "Contact your network administrator."&#41;&#41;;)
+
+[//]: # (//                  } else {)
+
+[//]: # (//                    logger.warn&#40;"A plugin changed a signed chat message. The server may not accept it."&#41;;)
+
+[//]: # (//                    return ChatBuilder.builder&#40;player.getProtocolVersion&#40;&#41;&#41;)
+
+[//]: # (//                        .message&#40;messageNew&#41;.toServer&#40;&#41;;)
+
+[//]: # (//                  })
+
+[//]: # (/*)
+
+[//]: # (* MY VERSION FOR FIXING IT.)
+
+[//]: # (*/)
